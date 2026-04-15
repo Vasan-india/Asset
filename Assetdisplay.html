@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asset Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --smrt-red: #d71920;
+            --smrt-dark: #2c2c2c;
+            --smrt-light: #f5f5f5;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--smrt-light);
+            color: var(--smrt-dark);
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px 24px;
+            background: white;
+            border-bottom: 6px solid var(--smrt-red);
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .header-title {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: var(--smrt-red);
+            color: white;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .field {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .field:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .value {
+            font-weight: 500;
+            color: #000;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with logo -->
+    
+<div class="header">
+    <img src="logo.png" alt="SMRT Logo" class="logo">
+    <div class="header-title">Asset Information Display</div>
+</div>
+
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Asset Details
+            </div>
+            <div class="card-body">
+                <div class="field">
+                    <div class="label">Asset Number</div>
+                    <div class="value" id="assetNumber">-</div>
+                </div>
+                <div class="field">
+                    <div class="label">Asset Class</div>
+                    <div class="value" id="assetClass">-</div>
+                </div>
+                <div class="field">
+                    <div class="label">Cost Center</div>
+                    <div class="value" id="costCenter">-</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Transit Asset System • Inspired by SMRT Design Language
+        </div>
+    </div>
+
+    <!-- JavaScript to read URL parameters -->
+    <script>
+        function getQueryParam(name) {
+            const params = new URLSearchParams(window.location.search);
+            return params.get(name) || "-";
+        }
+
+        document.getElementById("assetNumber").textContent = getQueryParam("assetNumber");
+        document.getElementById("assetClass").textContent = getQueryParam("assetClass");
+        document.getElementById("costCenter").textContent = getQueryParam("costCenter");
+    </script>
+
+</body>
+</html>
