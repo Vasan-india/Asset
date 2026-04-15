@@ -114,15 +114,15 @@
             <div class="card-body">
                 <div class="field">
                     <div class="label">Asset Number</div>
-                    <div class="value" id="assetNumber">-</div>
+                    <div class="value" id="an">-</div>
                 </div>
                 <div class="field">
                     <div class="label">Asset Class</div>
-                    <div class="value" id="assetClass">-</div>
+                    <div class="value" id="ac">-</div>
                 </div>
                 <div class="field">
                     <div class="label">Cost Center</div>
-                    <div class="value" id="costCenter">-</div>
+                    <div class="value" id="cc">-</div>
                 </div>
             </div>
         </div>
@@ -139,9 +139,9 @@
             return params.get(name) || "-";
         }
 
-        document.getElementById("assetNumber").textContent = getQueryParam("assetNumber");
-        document.getElementById("assetClass").textContent = getQueryParam("assetClass");
-        document.getElementById("costCenter").textContent = getQueryParam("costCenter");
+        document.getElementById("an").textContent = getQueryParam("an");
+        document.getElementById("ac").textContent = getQueryParam("ac");
+        document.getElementById("cc").textContent = getQueryParam("cc");
     </script>
 
 </body>
